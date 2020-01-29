@@ -15,7 +15,7 @@ if ( $session{CurrentUser}->HasRight(
     }
     else {
         $session{RT_Extension_BecomeUser_OriginalUser} = $session{CurrentUser};
-        $session{CurrentUser} = $u;
+        $session{RT_Extension_BecomeUser_NewUser} = $session{CurrentUser} = $u;
         $session{CurrentUser}->_BuildTableAttributes;
 
         $m->out("<h1>you are now user ".$session{CurrentUser}->Name." (id: $id )</h1>");
